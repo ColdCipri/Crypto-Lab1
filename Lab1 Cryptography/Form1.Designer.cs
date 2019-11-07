@@ -40,10 +40,10 @@
             // 
             this.textBox_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_input.Location = new System.Drawing.Point(15, 77);
-            this.textBox_input.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_input.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_input.Multiline = true;
             this.textBox_input.Name = "textBox_input";
-            this.textBox_input.Size = new System.Drawing.Size(241, 117);
+            this.textBox_input.Size = new System.Drawing.Size(298, 137);
             this.textBox_input.TabIndex = 0;
             // 
             // label_input
@@ -61,7 +61,7 @@
             // 
             this.label_output.AutoSize = true;
             this.label_output.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_output.Location = new System.Drawing.Point(343, 27);
+            this.label_output.Location = new System.Drawing.Point(465, 27);
             this.label_output.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_output.Name = "label_output";
             this.label_output.Size = new System.Drawing.Size(287, 46);
@@ -72,17 +72,17 @@
             // 
             this.textBox_output.Enabled = false;
             this.textBox_output.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_output.Location = new System.Drawing.Point(352, 77);
-            this.textBox_output.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_output.Location = new System.Drawing.Point(473, 77);
+            this.textBox_output.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_output.Multiline = true;
             this.textBox_output.Name = "textBox_output";
-            this.textBox_output.Size = new System.Drawing.Size(281, 117);
+            this.textBox_output.Size = new System.Drawing.Size(321, 137);
             this.textBox_output.TabIndex = 3;
             // 
             // button_switch
             // 
-            this.button_switch.Location = new System.Drawing.Point(266, 125);
-            this.button_switch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_switch.Location = new System.Drawing.Point(354, 133);
+            this.button_switch.Margin = new System.Windows.Forms.Padding(4);
             this.button_switch.Name = "button_switch";
             this.button_switch.Size = new System.Drawing.Size(79, 28);
             this.button_switch.TabIndex = 4;
@@ -93,8 +93,8 @@
             // button_start
             // 
             this.button_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_start.Location = new System.Drawing.Point(225, 241);
-            this.button_start.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_start.Location = new System.Drawing.Point(319, 307);
+            this.button_start.Margin = new System.Windows.Forms.Padding(4);
             this.button_start.Name = "button_start";
             this.button_start.Size = new System.Drawing.Size(164, 48);
             this.button_start.TabIndex = 5;
@@ -106,14 +106,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 304);
+            this.ClientSize = new System.Drawing.Size(837, 396);
             this.Controls.Add(this.button_start);
             this.Controls.Add(this.button_switch);
             this.Controls.Add(this.textBox_output);
             this.Controls.Add(this.label_output);
             this.Controls.Add(this.label_input);
             this.Controls.Add(this.textBox_input);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

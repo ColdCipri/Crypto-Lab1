@@ -69,12 +69,16 @@ namespace Lab1_Cryptography
                 
                 var encrypted = encryptMethod(text);
 
+                System.Windows.Forms.Clipboard.SetText(encrypted);
+
                 textBox_output.Text = encrypted;
             } else
             {
                 var text = textBox_output.Text.ToString();
 
                 var decrypted = decryptMethod(text);
+
+                System.Windows.Forms.Clipboard.SetText(decrypted);
 
                 textBox_input.Text = decrypted;
             }
