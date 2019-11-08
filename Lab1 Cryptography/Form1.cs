@@ -14,27 +14,23 @@ namespace Lab1_Cryptography
     public partial class Form1 : Form
     {
         ArrayList alphabet = new ArrayList() { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ' };
-        ArrayList randomList = new ArrayList(); 
+        ArrayList key = new ArrayList(); 
         public Form1()
         {
             InitializeComponent();
+            textBox_key.Text = "qwertyuioplkjhgfdsazxcvbnm ";
         }
 
-        private ArrayList substCypher(ArrayList alpha)
+        private ArrayList substCypher(String keyText)
         {
-            randomList = (ArrayList)alpha.Clone();
+            key.Clear();
 
-
-            Random rand = new Random();
-            for (int i = 0; i < randomList.Capacity - 1; i++)
+            for (int i = 0; i < keyText.Length; i++) 
             {
-                int j = rand.Next(i, randomList.Capacity);
-                var temp = randomList[i];
-                randomList[i] = randomList[j];
-                randomList[j] = temp;
+                key.Add(Convert.ToChar(keyText[i].ToString()));
             }
 
-            return randomList;
+            return key;
             
         }
 
@@ -45,44 +41,53 @@ namespace Lab1_Cryptography
                 textBox_input.Enabled = false;
                 textBox_output.Enabled = true;
 
+                label_input.Text = "Decrypted text:";
+                label_output.Text = "Plain text:";
+
                 textBox_input.Text = textBox_output.Text = "";
             }
             else
             {
                 textBox_input.Enabled = true;
                 textBox_output.Enabled = false;
-                
+
+                label_input.Text = "Plain text:";
+                label_output.Text = "Encrypted text:";
+
                 textBox_input.Text = textBox_output.Text = "";
             }
         }
 
         private void button_start_Click(object sender, EventArgs e)
         {
-            if (randomList.Capacity == 0)
+            if (!(textBox_key.Text.ToString().Length == 0))
             {
-                randomList = substCypher(alphabet);
-            }
+                key = substCypher(textBox_key.Text.ToString());
 
-            if (textBox_input.Enabled)
-            {
-                var text = textBox_input.Text.ToString();
-                
-                var encrypted = encryptMethod(text);
+                if (textBox_input.Enabled && textBox_input.Text.Length != 0)
+                {
+                    String text = textBox_input.Text.ToString();
 
-                System.Windows.Forms.Clipboard.SetText(encrypted);
+                    String encrypted = encryptMethod(text);
 
-                textBox_output.Text = encrypted;
+                    System.Windows.Forms.Clipboard.SetText(encrypted);
+
+                    textBox_output.Text = encrypted;
+                }
+                else if (textBox_output.Enabled && textBox_output.Text.Length != 0)
+                {
+                    String text = textBox_output.Text.ToString();
+
+                    String decrypted = decryptMethod(text);
+
+                    System.Windows.Forms.Clipboard.SetText(decrypted);
+
+                    textBox_input.Text = decrypted;
+                }
             } else
             {
-                var text = textBox_output.Text.ToString();
-
-                var decrypted = decryptMethod(text);
-
-                System.Windows.Forms.Clipboard.SetText(decrypted);
-
-                textBox_input.Text = decrypted;
+                MessageBox.Show("The key is empty!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
 
         private String encryptMethod(String text)
@@ -91,8 +96,7 @@ namespace Lab1_Cryptography
 
             for (int i = 0; i < text.Length; i++)
             {
-                var pos = alphabet.IndexOf(text[i]);
-                encrypted += randomList[pos].ToString();
+                encrypted += key[alphabet.IndexOf(text[i])].ToString();
             }
 
             return encrypted;
@@ -100,12 +104,11 @@ namespace Lab1_Cryptography
 
         private String decryptMethod(String text)
         {
-            var decrypted = "";
+            String decrypted = "";
 
             for (int i = 0; i < text.Length; i++)
             {
-                var pos = randomList.IndexOf(text[i]);
-                decrypted += alphabet[pos].ToString();
+                decrypted += alphabet[key.IndexOf(text[i])].ToString();
             }
 
             return decrypted;

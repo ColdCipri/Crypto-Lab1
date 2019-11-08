@@ -34,6 +34,8 @@
             this.textBox_output = new System.Windows.Forms.TextBox();
             this.button_switch = new System.Windows.Forms.Button();
             this.button_start = new System.Windows.Forms.Button();
+            this.label_key = new System.Windows.Forms.Label();
+            this.textBox_key = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox_input
@@ -102,11 +104,34 @@
             this.button_start.UseVisualStyleBackColor = true;
             this.button_start.Click += new System.EventHandler(this.button_start_Click);
             // 
+            // label_key
+            // 
+            this.label_key.AutoSize = true;
+            this.label_key.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_key.Location = new System.Drawing.Point(18, 230);
+            this.label_key.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_key.Name = "label_key";
+            this.label_key.Size = new System.Drawing.Size(99, 46);
+            this.label_key.TabIndex = 7;
+            this.label_key.Text = "Key:";
+            // 
+            // textBox_key
+            // 
+            this.textBox_key.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_key.Location = new System.Drawing.Point(27, 280);
+            this.textBox_key.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_key.Multiline = true;
+            this.textBox_key.Name = "textBox_key";
+            this.textBox_key.Size = new System.Drawing.Size(255, 88);
+            this.textBox_key.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 396);
+            this.Controls.Add(this.label_key);
+            this.Controls.Add(this.textBox_key);
             this.Controls.Add(this.button_start);
             this.Controls.Add(this.button_switch);
             this.Controls.Add(this.textBox_output);
@@ -115,7 +140,7 @@
             this.Controls.Add(this.textBox_input);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Substitution Cypher";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,6 +154,8 @@
         private System.Windows.Forms.TextBox textBox_output;
         private System.Windows.Forms.Button button_switch;
         private System.Windows.Forms.Button button_start;
+        private System.Windows.Forms.Label label_key;
+        private System.Windows.Forms.TextBox textBox_key;
     }
 }
 
